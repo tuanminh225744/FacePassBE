@@ -1,5 +1,5 @@
 // EmployeeModel.js
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const EmployeeSchema = new mongoose.Schema({
     // --- Thông tin Nhân viên Cơ bản ---

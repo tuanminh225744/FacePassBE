@@ -1,6 +1,6 @@
 // AttendanceModel.js
-const mongoose = require('mongoose');
-const AttendanceLogDetailSchema = require('./attendanceLogDetailSchema'); // Import Schema phụ
+import mongoose from 'mongoose';
+import AttendanceLogDetailSchema from './attendanceLogDetailSchema.js';
 
 const AttendanceSchema = new mongoose.Schema({
     employeeId: { 

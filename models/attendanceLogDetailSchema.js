@@ -1,5 +1,5 @@
 // attendanceLogDetailSchema.js (Không cần tạo Model)
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const AttendanceLogDetailSchema = new mongoose.Schema({
     time: { type: Date, required: true },
