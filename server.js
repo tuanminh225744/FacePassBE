@@ -3,6 +3,10 @@ import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 
+// Import các route từ các file khác
+import employeeRoutes from './routes/employeeRoutes.js';
+import userRoutes from './routes/userRoutes.js';
+
 // Load biến môi trường từ file .env
 dotenv.config();
 
@@ -32,6 +36,8 @@ connectDB();
 app.get('/', (req, res) => {
   res.send('Chào mừng đến với Backend Quản lý Nhân viên!');
 });
+app.use('/api/employees', employeeRoutes);
+app.use('/api/users', userRoutes);
 
 // Khởi động server
 app.listen(PORT, () => {

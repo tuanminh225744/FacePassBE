@@ -16,4 +16,4 @@ const ConfigurationSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-module.exports = mongoose.model('Configuration', ConfigurationSchema);
+export default mongoose.model('Configuration', ConfigurationSchema);

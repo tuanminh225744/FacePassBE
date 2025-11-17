@@ -11,4 +11,4 @@ const AttendanceLogDetailSchema = new mongoose.Schema({
     imageURL: { type: String, required: true } // Đường dẫn đến Azure Blob Storage
 }, { _id: false }); // Không cần ID riêng cho mỗi chi tiết log
 
-module.exports = AttendanceLogDetailSchema;
+export default AttendanceLogDetailSchema;

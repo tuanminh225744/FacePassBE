@@ -1,7 +1,7 @@
 // middleware/authMiddleware.js
 import jwt from 'jsonwebtoken';
 import User from '../models/UserModel.js';
-import verifyToken from '../utils/jwtUtils.js';
+import {verifyToken} from '../utils/jwtUtils.js';
 
 const protect = async (req, res, next) => {
     let token;
@@ -44,4 +44,16 @@ const protect = async (req, res, next) => {
     }
 };
 
-module.exports = { protect };
+const admin = (req, res, next) => {
+    // req.user được gắn vào sau khi middleware 'protect' chạy
+    if (req.user && req.user.role === 'Admin') {
+        next(); // Được phép đi tiếp
+    } else {
+        // Mã lỗi 403: Forbidden (Không có quyền)
+        res.status(403).json({ 
+            message: 'Truy cập bị từ chối. Chỉ Admin mới có quyền thực hiện thao tác này.' 
+        });
+    }
+};
+
+export { protect, admin };

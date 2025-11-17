@@ -46,4 +46,4 @@ const EmployeeSchema = new mongoose.Schema({
 
 }, { timestamps: true }); // Tự động thêm createdAt và updatedAt
 
-module.exports = mongoose.model('Employee', EmployeeSchema);
+export default mongoose.model('Employee', EmployeeSchema);
